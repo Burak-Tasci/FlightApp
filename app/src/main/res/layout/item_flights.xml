@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="320dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:clickable="true"
+    android:layout_marginHorizontal="27dp"
+    android:layout_marginTop="20dp"
+    android:focusable="true">
+    <!-- todo Belirli yükseklik verme, içindekilerin yüksekliğine göre değişsin. Bazı kullanıcılar telefon ayarlarından yazı boyutlarını değiştiriyor, kurtarmaz bu yükseklik o zaman -->
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:background="@color/dark_anti_flash_white">
+
+        <!-- todo LinearLayout'u kaldırıp ConstraintLayout içerisinde sırala, fazlalık -->
+        <LinearLayout
+            android:id="@+id/flight_infos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <!-- todo include ile alma burada, statik metinleri değiştirmen gerek yoksa adapter içerisinde ve data binding yapılmaz bu şekilde -->
+
+            <include layout="@layout/item_flight_info"
+                android:id="@+id/airport_line"/>
+
+            <include layout="@layout/item_flight_info"
+                android:id="@+id/departure_line"/>
+
+            <include
+                android:id="@+id/arrival_line"
+                layout="@layout/item_flight_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="32dp" />
+
+
+        </LinearLayout>
+
+        <!-- todo ImageView kullan -->
+        <View
+            android:id="@+id/status"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_margin="16dp"
+            android:background="@drawable/ic_baseline_circle_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/flight_infos"
+            app:layout_constraintTop_toBottomOf="@id/flight_infos" />
+
+        <!-- todo Tıklanabilir component'lere mutlaka padding ver küçük ise -->
+        <View
+            android:id="@+id/to_details_btn"
+            android:layout_width="5dp"
+            android:layout_height="9dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:elevation="4dp"
+            android:layout_marginEnd="21dp"
+            android:background="@drawable/path"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/flight_infos" />
+
+        <!-- todo Bu görsel, neden TextView? -->
+        <TextView
+            android:id="@+id/shape"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_marginStart="13dp"
+            android:background="@drawable/shape"
+            app:layout_constraintBottom_toBottomOf="@id/status"
+            app:layout_constraintStart_toEndOf="@id/status"
+            app:layout_constraintTop_toTopOf="@id/status"
+            tools:viewBindingIgnore="true" />
+
+        <!-- todo sağındaki görseli drawableStart ile TextView'e ver, component fazlalığı olmasın -->
+        <TextView
+            android:id="@+id/delay_time_text"
+            style="@style/flightInfoTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="@id/shape"
+            app:layout_constraintStart_toEndOf="@id/shape"
+            app:layout_constraintTop_toTopOf="@id/shape"
+            tools:text="13 min" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

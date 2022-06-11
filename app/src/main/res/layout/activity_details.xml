@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- todo ScrollView içerisinde kullan, küçük ekranlarda tasarımın kesilmiş olur -->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/details_title_text"
+                style="@style/TitleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="52dp"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="PX100 Flight Details"
+                tools:viewBindingIgnore="true" />
+
+            <!-- todo clickable ve focusable'ın varsayılanı true zaten, gerek yok. focusable'a hiç gerek yok, edittext değil -->
+            <!-- todo ImageView kullanırsan daha iyi olur -->
+            <!-- todo margin'leri padding olarak verebilirsen tıklama alanları genişlemiş olur, tıklanabilir component'ler küçük ise mutlaka padding ver, tıklanması zor oluyor yoksa -->
+            <View
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="19dp"
+                android:background="@drawable/ic_baseline_close_24"
+                android:clickable="true"
+                android:focusable="true"
+                app:layout_constraintBottom_toBottomOf="@id/details_title_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/details_title_text" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ImageView
+        android:id="@+id/login_toolbar_bg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:src="@drawable/login_toolbar_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:viewBindingIgnore="true" />
+
+
+    <ImageView
+        android:id="@+id/login_airbus_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/login_airbus_image"
+        app:layout_constraintBottom_toBottomOf="@id/login_toolbar_bg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/login_toolbar_bg"
+        tools:viewBindingIgnore="true" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginBottom="69dp"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/login_airbus_image">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/dark_sapphire"
+                android:paddingBottom="40dp">
+
+                <include
+                    android:id="@+id/departure_airport"
+                    layout="@layout/item_airport_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="32dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:background="@drawable/group"
+                    android:scaleX="0.4"
+                    android:scaleY="0.4"
+                    android:layout_marginBottom="36dp"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintStart_toStartOf="@id/departure_airport"
+                    app:layout_constraintEnd_toEndOf="@id/arrival_airport"
+                    app:layout_constraintTop_toTopOf="@id/departure_airport"
+                    app:layout_constraintBottom_toBottomOf="@id/departure_airport"/>
+
+                <include
+                    android:id="@+id/arrival_airport"
+                    layout="@layout/item_airport_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="32dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/flight_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="32dp"
+                    android:fontFamily="sans-serif"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Flight:" />
+
+                <!-- todo Yan yana yazı koyacaksan bu şekilde, xml'i ortadan ikiye bölüp hizalamasını yap. Sağa ve sola hizalama yapmışsın, küçük ekranlarda üst üste gelir bu şekilde. -->
+                <TextView
+                    android:id="@+id/flight_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="35dp"
+                    android:fontFamily="sans-serif"
+                    android:textColor="@color/dark_sapphire"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@id/flight_label"
+                    app:layout_constraintStart_toEndOf="@id/flight_label"
+                    app:layout_constraintTop_toTopOf="@id/flight_label"
+                    tools:text="PX100"/>
+
+                <TextView
+                    android:id="@+id/terminal_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:fontFamily="sans-serif"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="@id/flight_label"
+                    app:layout_constraintTop_toBottomOf="@id/flight_label"
+                    tools:text="Terminal:" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:textColor="@color/dark_sapphire"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/flight_name"
+                    app:layout_constraintTop_toTopOf="@id/terminal_label"
+                    tools:text="D" />
+
+                <TextView
+                    android:id="@+id/gate_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:layout_marginEnd="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toStartOf="@id/gate_name"
+                    app:layout_constraintTop_toTopOf="@id/gate_name"
+                    app:layout_constraintBottom_toBottomOf="@id/gate_name"
+                    tools:text="Gate:" />
+
+                <TextView
+                    android:id="@+id/gate_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:textColor="@color/dark_sapphire"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="32dp"
+                    app:layout_constraintTop_toTopOf="@id/flight_label"
+                    tools:text="14F" />
+
+
+                <TextView
+                    android:id="@+id/delay_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:layout_marginEnd="16dp"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toStartOf="@id/delay_name"
+                    app:layout_constraintTop_toTopOf="@id/delay_name"
+                    app:layout_constraintBottom_toBottomOf="@id/delay_name"
+                    tools:text="Delay:" />
+
+                <TextView
+                    android:id="@+id/delay_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:textColor="@color/dark_sapphire"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@id/gate_name"
+                    app:layout_constraintTop_toTopOf="@id/terminal_label"
+                    tools:text="24A" />
+
+
+                <com.google.android.material.divider.MaterialDivider
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginHorizontal="32dp"
+                    android:layout_marginBottom="32dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

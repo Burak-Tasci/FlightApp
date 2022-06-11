@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_anti_flash_white"
+    tools:context=".presentation.ui.login.LoginActivity">
+
+    <ImageView
+        android:id="@+id/login_toolbar_bg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        tools:viewBindingIgnore="true"
+        android:src="@drawable/login_toolbar_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        style="@style/TitleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:viewBindingIgnore="true"
+        android:text="@string/app_name"
+        app:layout_constraintBottom_toBottomOf="@id/login_toolbar_bg"
+        app:layout_constraintEnd_toEndOf="@id/login_toolbar_bg"
+        app:layout_constraintStart_toStartOf="@id/login_toolbar_bg"
+        app:layout_constraintTop_toTopOf="@id/login_toolbar_bg" />
+
+    <ImageView
+        android:id="@+id/login_airbus_image"
+        android:layout_width="wrap_content"
+        tools:viewBindingIgnore="true"
+        android:layout_height="wrap_content"
+        android:src="@drawable/login_airbus_image"
+        app:layout_constraintBottom_toBottomOf="@id/login_toolbar_bg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/login_toolbar_bg" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/login_airbus_image">
+
+        <!-- todo Tam tasarımdan emin değilim. Özellikle istenmediyse TextInputLayout içerisinde kullan. Kullanıcı girdikten sonra tam olarak ne girdiğini göremiyor bu şekilde -->
+        <EditText
+            android:id="@+id/mail_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:layout_marginHorizontal="25dp"
+            android:background="@drawable/round_corner"
+            android:hint="@string/hint_mail" />
+
+        <EditText
+            android:id="@+id/password_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="25dp"
+            android:inputType="textPassword"
+            android:layout_marginTop="@dimen/margin_semi_medium"
+            android:background="@drawable/round_corner"
+            android:hint="@string/hint_pasword" />
+
+        <!-- todo Bunlara font_family vermemişsin -->
+        <CheckBox
+            android:id="@+id/remember_me_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="14dp"
+            android:layout_marginStart="35dp"
+            android:text="@string/remember_me_checkbox" />
+
+        <!-- todo background'u tek bir görsel şeklinde verirsen tıklama efekti olmaz. state'leri için farklı görseller oluşturup ver ya da direkt MaterialButton kullan -->
+        <Button
+            android:id="@+id/login_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:background="@drawable/round_corner_bright_navy_blue"
+            android:text="@string/login_button_text"
+            android:textAllCaps="false" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

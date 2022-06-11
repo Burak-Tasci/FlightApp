@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/ABRA/AndroidStudioProjects/FlightApp/app/src/main/res/drawable/activity_mai.xml" value="0.1615" />
+        <entry key="..\:/Users/ABRA/AndroidStudioProjects/FlightApp/app/src/main/res/drawable/login_airbus_image.xml" value="0.1605" />
+        <entry key="..\:/Users/ABRA/AndroidStudioProjects/FlightApp/app/src/main/res/drawable/login_toolbar_bg.xml" value="0.1605" />
+        <entry key="..\:/Users/ABRA/AndroidStudioProjects/FlightApp/app/src/main/res/drawable/main_toolbar_bg.xml" value="0.1615" />
+        <entry key="..\:/Users/ABRA/AndroidStudioProjects/FlightApp/app/src/main/res/drawable/round_corner.xml" value="0.1605" />
+        <entry key="..\:/Users/ABRA/AndroidStudioProjects/FlightApp/app/src/main/res/drawable/round_corner_bright_navy_blue.xml" value="0.1605" />
+        <entry key="..\:/Users/ABRA/AndroidStudioProjects/FlightApp/app/src/main/res/drawable/shape.xml" value="0.1605" />
+        <entry key="..\:/Users/ABRA/AndroidStudioProjects/FlightApp/app/src/main/res/drawable/splash_plane_image.xml" value="0.1605" />
+        <entry key="..\:/Users/ABRA/AndroidStudioProjects/FlightApp/app/src/main/res/layout/activity_details.xml" value="0.264" />
+        <entry key="..\:/Users/ABRA/AndroidStudioProjects/FlightApp/app/src/main/res/layout/activity_home.xml" value="0.264" />
+        <entry key="..\:/Users/ABRA/AndroidStudioProjects/FlightApp/app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="..\:/Users/ABRA/AndroidStudioProjects/FlightApp/app/src/main/res/layout/activity_main.xml" value="0.27447916666666666" />
+        <entry key="..\:/Users/ABRA/AndroidStudioProjects/FlightApp/app/src/main/res/layout/activity_splash.xml" value="0.2" />
+        <entry key="..\:/Users/ABRA/AndroidStudioProjects/FlightApp/app/src/main/res/layout/item_airport_location.xml" value="0.2210144927536232" />
+        <entry key="..\:/Users/ABRA/AndroidStudioProjects/FlightApp/app/src/main/res/layout/item_flight_info.xml" value="0.536" />
+        <entry key="..\:/Users/ABRA/AndroidStudioProjects/FlightApp/app/src/main/res/layout/item_flights.xml" value="0.264" />
+        <entry key="..\:/Users/ABRA/AndroidStudioProjects/FlightApp/app/src/main/res/layout/item_flights_layout.xml" value="0.2210144927536232" />
+        <entry key="app/src/main/res/drawable/ic_baseline_circle_24.xml" value="0.2275" />
+        <entry key="app/src/main/res/drawable/login_toolbar_bg.xml" value="0.2275" />
+        <entry key="app/src/main/res/drawable/main_toolbar_bg.xml" value="0.2275" />
+        <entry key="app/src/main/res/drawable/round_corner_bright_navy_blue.xml" value="0.2275" />
+        <entry key="app/src/main/res/drawable/splash_plane_image.xml" value="0.2275" />
+        <entry key="app/src/main/res/layout/activity_details.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_home.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.3072649572649573" />
+        <entry key="app/src/main/res/layout/activity_splash.xml" value="0.3072649572649573" />
+        <entry key="app/src/main/res/layout/item_airport_location.xml" value="0.3072649572649573" />
+        <entry key="app/src/main/res/layout/item_flight_info.xml" value="0.3072649572649573" />
+        <entry key="app/src/main/res/layout/item_flights.xml" value="0.3072649572649573" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.2210144927536232" />
+      </ProjectState>
+    </option>
+  </component>
+</project>

@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Flight App</string>
+    <string name="splash_screen_text">Flight\nApp</string>
+    <string name="hint_mail">Mail</string>
+    <string name="hint_pasword">Şifre</string>
+    <string name="remember_me_checkbox">Remember Me</string>
+    <string name="login_button_text">Giriş Yap</string>
+    <string name="main_activity_title">Flight</string>
+
+    <string name="airline">Airline: </string>
+    <string name="departure">Departure: </string>
+    <string name="arrival">Arrival: </string>
+</resources>
