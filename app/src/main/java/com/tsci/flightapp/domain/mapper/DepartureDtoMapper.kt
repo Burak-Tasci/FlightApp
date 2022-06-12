@@ -11,11 +11,11 @@ object DepartureDtoMapper {
             return null
 
         return DepartureDomainModel(
-            airport = departureDto.airport,
-            iata = departureDto.iata,
-            estimated = departureDto.estimated,
+            airport = departureDto.airport ?: "Unknown",
+            iata = departureDto.iata ?: "Unknown",
+            estimated = departureDto.estimated ?: "Unknown",
             delay = departureDto.delay.toString(),
-            terminal = departureDto.terminal ?: ""
+            terminal = departureDto.terminal ?: "Unknown"
         )
 
     }

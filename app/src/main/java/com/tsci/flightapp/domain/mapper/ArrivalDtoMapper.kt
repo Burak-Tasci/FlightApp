@@ -11,10 +11,10 @@ object ArrivalDtoMapper {
             return null
 
         return ArrivalDomainModel(
-            airport = arrivalDto.airport,
+            airport = arrivalDto.airport ?: "",
             delay = arrivalDto.delay.toString(),
-            estimated = arrivalDto.estimated,
-            iata = arrivalDto.iata,
+            estimated = arrivalDto.estimated ?: "",
+            iata = arrivalDto.iata?: "",
             terminal = arrivalDto.terminal.toString()
         )
     }

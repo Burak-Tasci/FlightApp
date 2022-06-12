@@ -20,8 +20,8 @@ object FlightDtoMapper {
         }
 
         return FlightDomainModel(
-            airline= flightDto.airline.name,
-            flightIata = flightDto.flight.iata,
+            airline= flightDto.airline?.name,
+            flightIata = flightDto.flight?.iata,
             flightStatus = status,
             arrival = ArrivalDtoMapper.map(flightDto.arrival),
             departure = DepartureDtoMapper.map(flightDto.departure)
